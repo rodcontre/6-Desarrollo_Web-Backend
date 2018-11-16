@@ -127,88 +127,28 @@ function verTodos(data) {
         case 0:
           if (number >= from && number <= to) {
             j++;
-            $('#listaPropiedades').append(
-                        '<div class="card horizontal">' +
-                          '<div class="card-image">' + '<img src="img/home.jpg">' + '</div>' +
-                          '<div class="card-stacked">' +
-                            '<div class="card-content">' +
-                              '<div>' + '<b>Direccion: </b> ' + data[i].Direccion + '</div>' +
-                              '<div>' + '<b>Ciudad: </b> ' + data[i].Ciudad + '</div>' +
-                              '<div>' + '<b>Telefono: </b> ' + data[i].Telefono + '</div>' +
-                              '<div>' + '<b>Código postal: </b> ' + data[i].Codigo_Postal + '</div>' +
-                              '<div>' + '<b>Precio: </b> ' + data[i].Precio + '</div>' +
-                              '<div>' + '<b>Tipo: </b> ' + data[i].Tipo + '</div>' +
-                            '</div>' +
-                            '<div class="card-action right-align">' + '<a href="#">Ver más</a>' + '</div>' +
-                          '</div>' +
-                        '</div>'
-            );
+            appendData(data, i);
           }
 
           break;
         case 1:
           if (data[i].Ciudad == $selectCity && number >= from && number <= to) {
             j++;
-            $('#listaPropiedades').append(
-                        '<div class="card horizontal">' +
-                          '<div class="card-image">' + '<img src="img/home.jpg">' + '</div>' +
-                          '<div class="card-stacked">' +
-                            '<div class="card-content">' +
-                              '<div>' + '<b>Direccion: </b> ' + data[i].Direccion + '</div>' +
-                              '<div>' + '<b>Ciudad: </b> ' + data[i].Ciudad + '</div>' +
-                              '<div>' + '<b>Telefono: </b> ' + data[i].Telefono + '</div>' +
-                              '<div>' + '<b>Código postal: </b> ' + data[i].Codigo_Postal + '</div>' +
-                              '<div>' + '<b>Precio: </b> ' + data[i].Precio + '</div>' +
-                              '<div>' + '<b>Tipo: </b> ' + data[i].Tipo + '</div>' +
-                            '</div>' +
-                            '<div class="card-action right-align">' + '<a href="#">Ver más</a>' + '</div>' +
-                          '</div>' +
-                        '</div>'
-            );
+            appendData(data, i);
           }
 
           break;
         case 2:
           if (data[i].Tipo == $selectType && number >= from && number <= to) {
             j++;
-            $('#listaPropiedades').append(
-                        '<div class="card horizontal">' +
-                          '<div class="card-image">' + '<img src="img/home.jpg">' + '</div>' +
-                          '<div class="card-stacked">' +
-                            '<div class="card-content">' +
-                              '<div>' + '<b>Direccion: </b> ' + data[i].Direccion + '</div>' +
-                              '<div>' + '<b>Ciudad: </b> ' + data[i].Ciudad + '</div>' +
-                              '<div>' + '<b>Telefono: </b> ' + data[i].Telefono + '</div>' +
-                              '<div>' + '<b>Código postal: </b> ' + data[i].Codigo_Postal + '</div>' +
-                              '<div>' + '<b>Precio: </b> ' + data[i].Precio + '</div>' +
-                              '<div>' + '<b>Tipo: </b> ' + data[i].Tipo + '</div>' +
-                            '</div>' +
-                            '<div class="card-action right-align">' + '<a href="#">Ver más</a>' + '</div>' +
-                          '</div>' +
-                        '</div>'
-            );
+            appendData(data, i);
           }
 
           break;
         case 3:
           if (number >= from && number <= to && data[i].Ciudad == $selectCity && data[i].Tipo == $selectType) {
             j++;
-            $('#listaPropiedades').append(
-                        '<div class="card horizontal">' +
-                          '<div class="card-image">' + '<img src="img/home.jpg">' + '</div>' +
-                          '<div class="card-stacked">' +
-                            '<div class="card-content">' +
-                              '<div>' + '<b>Direccion: </b> ' + data[i].Direccion + '</div>' +
-                              '<div>' + '<b>Ciudad: </b> ' + data[i].Ciudad + '</div>' +
-                              '<div>' + '<b>Telefono: </b> ' + data[i].Telefono + '</div>' +
-                              '<div>' + '<b>Código postal: </b> ' + data[i].Codigo_Postal + '</div>' +
-                              '<div>' + '<b>Precio: </b> ' + data[i].Precio + '</div>' +
-                              '<div>' + '<b>Tipo: </b> ' + data[i].Tipo + '</div>' +
-                            '</div>' +
-                            '<div class="card-action right-align">' + '<a href="#">Ver más</a>' + '</div>' +
-                          '</div>' +
-                        '</div>'
-            );
+            appendData(data, i);
           }
 
           break;
@@ -218,3 +158,22 @@ function verTodos(data) {
     console.log(j);
   });
 };
+
+function appendData(data, i) {
+  $('#listaPropiedades').append(
+              '<div class="card horizontal">' +
+                '<div class="card-image">' + '<img src="img/home.jpg">' + '</div>' +
+                '<div class="card-stacked">' +
+                  '<div class="card-content">' +
+                    '<div>' + '<b>Direccion: </b> ' + data[i].Direccion + '</div>' +
+                    '<div>' + '<b>Ciudad: </b> ' + data[i].Ciudad + '</div>' +
+                    '<div>' + '<b>Telefono: </b> ' + data[i].Telefono + '</div>' +
+                    '<div>' + '<b>Código postal: </b> ' + data[i].Codigo_Postal + '</div>' +
+                    '<div>' + '<b>Precio: </b> ' + data[i].Precio + '</div>' +
+                    '<div>' + '<b>Tipo: </b> ' + data[i].Tipo + '</div>' +
+                  '</div>' +
+                  '<div class="card-action right-align">' + '<a href="#">Ver más</a>' + '</div>' +
+                '</div>' +
+              '</div>'
+  );
+}
